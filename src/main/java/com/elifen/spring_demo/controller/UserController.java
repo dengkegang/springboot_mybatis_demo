@@ -15,7 +15,9 @@ public class UserController {
     @PostMapping(path = "/add")
     public @ResponseBody String addNewUser(@RequestBody User user){
         int flag = userService.addUser(user);
-        System.out.println("user = [" + user + "]");
+        if(flag==1) {
+            System.out.println("user = [" + user + "]");
+        }
         return "saved";
     }
 
