@@ -1,0 +1,26 @@
+server:
+  port: 8080
+#
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_demo?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: 123456
+  #hibernate id generator AUTO
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+
+#mtbatis
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.elifen.spring_demo.pojo
+
+#showsql
+logging:
+  level:
+    com:
+      elifen:
+        spring_demo:
+          mapper: debug
